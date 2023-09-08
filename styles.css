@@ -1,0 +1,148 @@
+* {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+.text {
+    position: relative;
+    transform: skewY(345deg) translate(-200px);
+    animation: animateColor 5s linear infinite;
+}
+
+@keyframes animateColor {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.text h2 {
+    position: relative;
+    width: 100%;
+    font-size: 6em;
+    color: white;
+    pointer-events: none;
+    line-height: 1em;
+    white-space: nowrap;
+    text-shadow: calc(var(--x)) 100px 0 rgba(255, 255, 255, 0.1);
+    transform: translateX(calc(0% - var(--x) * var(--i)));
+}
+
+.text h2 span {
+    color: aqua;
+    margin: 0 10px;
+}
+
+.text h2 span:nth-child(even) {
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+}
+
+.container {
+    width: 800px;
+    height: 800px;
+    background: rgb(0, 0, 0);
+    padding: 30px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+    position: absolute;
+    z-index: 1;
+    border: 10px solid transparent;
+    animation: glow-border 2s ease-in-out infinite;
+    border-radius: 5%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.container h1 {
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    padding: 10px;
+    top: 10px;
+}
+
+.container h2 {
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    text-align: left;
+    padding: 10px;
+    gap: 10px;
+}
+
+ul {
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    text-align: left;
+    list-style: none;
+    left: 30px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.social-icons {
+    display: inline-flex; 
+    align-items: center; 
+    font-size: 40px;
+    gap: 20px;
+    padding: 30px;
+}
+
+.icon-large {
+    color: white;
+    font-size: 50px;
+    margin-right: 20px;
+}
+
+.social-icons a {
+    
+    margin: 0 10px;
+    font-size: 24px;
+    color: #ffffff;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+@keyframes glow-border {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0);
+    }
+    50% {
+        box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0);
+    }
+}
